@@ -115,8 +115,8 @@ $get_posts = $con->query("SELECT * FROM posts where category='$category' ")
                 <div class="col-md-9 width70">
                     <div class="blog_post_sec">
                     <?php
-                    while($single_posts=$get_posts->fetch_assoc()){
-                        $get_id = $n_posts['user_id'];
+                    while($single_post=$get_posts->fetch_assoc()){
+                        $get_id = $single_post['user_id'];
                         $get_name= $con->query("SELECT * from gists where id='$get_id' ");
                         $name = mysqli_fetch_assoc($get_name);
                         $row = $name['name'];
